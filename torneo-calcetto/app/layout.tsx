@@ -29,6 +29,14 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Navbar />
+        {/* Top gradient fade: dark green/black → transparent */}
+        <div
+          className="fixed top-0 left-0 right-0 z-40 pointer-events-none"
+          style={{
+            height: '10rem',
+            background: 'linear-gradient(to bottom, rgba(5, 25, 10, 0.72) 0%, rgba(5, 25, 10, 0) 90%)',
+          }}
+        />
         {children}
       </body>
     </html>

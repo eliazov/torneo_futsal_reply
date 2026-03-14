@@ -47,9 +47,17 @@ export async function signup(formData: FormData) {
     })
 
     if (error) {
-        redirect('/login?error=true')
+        console.error('Signup error:', error)
+        redirect('/login?error=true&message=' + encodeURIComponent(error.message))
     }
 
     revalidatePath('/', 'layout')
     redirect('/')
+}
+
+export async function logout() {
+    const supabase = await createClient()
+    await supabase.auth.signOut()
+    revalidatePath('/', 'layout')
+    redirect('/login')
 }
