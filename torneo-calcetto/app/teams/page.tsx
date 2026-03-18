@@ -173,7 +173,7 @@ export default function TeamsPage() {
     return (
         <>
             <div className="h-[100vh] w-full">
-                <Map center={[-74.006, 40.7128]} zoom={12}
+                <Map center={[-74.006, 40.7128]} zoom={2}
                     projection={{ type: "globe" }} />
             </div>
         </>
